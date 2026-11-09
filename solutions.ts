@@ -1,6 +1,6 @@
 
 
-const multiplyValue =(value: number, multiplier?: number):number => {
+const multiplyValue  =(value: number, multiplier?: number):number => {
     if (multiplier !== undefined){
         return value * multiplier;
         
@@ -13,7 +13,7 @@ const multiplyValue =(value: number, multiplier?: number):number => {
 
 
 
-const processInput = (value: string | number | boolean) =>{
+const processInput  = (value: string | number | boolean) =>{
     if( typeof value == "string"){
         return value.trim().toLowerCase();
 
@@ -28,7 +28,7 @@ const processInput = (value: string | number | boolean) =>{
 
 
 
-const formatCoordinate = (
+const formatCoordinate  = (
     coordinate: readonly [number, number, string]
 ): string => {
     const [latitude, longitude, locationName] = coordinate;
@@ -38,7 +38,7 @@ const formatCoordinate = (
 
 
 
-const concatenateArrays = <T>(...arrays: T[][]): T[] => {
+const concatenateArrays  = <T>(...arrays: T[][]): T[] => {
     return arrays.flat();
 };
 
@@ -50,7 +50,7 @@ interface Course {
     isPublished: boolean;
 }
 
-const getPopularCourses = (courses: Course[], minStudents: number): Course[] => {
+const getPopularCourses  = (courses: Course[], minStudents: number): Course[] => {
     return courses.filter((course) => {
         return course.isPublished === true && course.students >= minStudents;
     });
@@ -60,7 +60,7 @@ const getPopularCourses = (courses: Course[], minStudents: number): Course[] => 
 
 
 
-const pluckValues = <T, K extends keyof T>(
+const pluckValues  = <T, K extends keyof T>(
     items: T[],
     key: K
 ): T[K][] => {
@@ -71,15 +71,15 @@ const pluckValues = <T, K extends keyof T>(
 
 class Employee {
    protected name: string;
-     private _baseSalary: number;
+     private baseSalary: number;
     
     constructor(name: string, baseSalary: number){
         this.name = name;
-        this._baseSalary = baseSalary;
+        this.baseSalary = baseSalary;
     }
 
     getDetails(){
-        return `Employee: ${this.name}, Base Salary: ${this._baseSalary}`
+        return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`
     }
 }
 
@@ -106,13 +106,6 @@ class Manager extends Employee {
 
 
 const manager = new Manager('Mizan', 2433, 'Admin');
-
-
-
-manager.getDetails();
-manager.getRoleInfo();
-
-
 
 
 const validateAgeAsync = (age: number): Promise<string> => {
